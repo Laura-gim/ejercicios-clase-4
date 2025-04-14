@@ -1,0 +1,17 @@
+#ejercicio 1:
+Animal = type('Animal', (), dict(hablar=lambda self: "El animal hace un sonido"))
+
+Perro = type('Perro', (Animal,), dict(hablar=lambda self: "El perro ladra"))
+
+Gato = type('Gato', (Animal,), dict(hablar=lambda self: "El gato maúlla"))
+
+def hacer_hablar(animal):
+    print(animal.hablar())
+
+ani = Animal()
+per = Perro()
+gat = Gato()
+
+hacer_hablar(ani)
+hacer_hablar(per)
+hacer_hablar(gat)
