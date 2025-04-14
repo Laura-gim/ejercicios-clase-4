@@ -1,4 +1,4 @@
-#ejercicio 1:
+ej#ejercicio 1:
 Animal = type('Animal', (), dict(hablar=lambda self: "El animal hace un sonido"))
 
 Perro = type('Perro', (Animal,), dict(hablar=lambda self: "El perro ladra"))
@@ -29,3 +29,20 @@ def mensaje():
     print("Esto es programación avazada")
     
 mensaje()
+#ejercicio 2) D)
+def verificar_cero(func):
+    def wrapper(*args, **kwargs):
+        if 0 in args:
+            print("ERROR ERROR ERROR")
+        return func(*args, **kwargs)
+    return wrapper
+
+@verificar_cero
+def dividir(a, b):
+    if b == 0:
+        return "No se puede dividir por cero."
+    return a / b
+
+
+print(int(dividir(10, 2)) ) 
+print(dividir(10, 0))  
