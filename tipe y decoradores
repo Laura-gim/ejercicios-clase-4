@@ -47,3 +47,29 @@ def dividir(a, b):
 
 print(int(dividir(10, 2)) ) 
 print(dividir(10, 0))  
+#Ejercicio 2)e)
+
+from datetime import datetime
+
+def imprimir_fecha_hora(func):
+    def wrapper(*args, **kwargs):
+        ahora = datetime.now()
+        print(f"Fecha y hora: {ahora.strftime('%Y-%m-%d %H:%M:%S')}")
+        return func(*args, **kwargs)
+    return wrapper
+@imprimir_fecha_hora
+def saludar(nombre):
+    print(f"Hola, {nombre}!")
+
+@imprimir_fecha_hora
+def sumar(a, b):
+    print(f"La suma es: {a + b}")
+
+@imprimir_fecha_hora
+def despedirse(nombre):
+    print(f"Adiós {nombre}!!!")
+
+
+saludar("SALEM")
+sumar(7, 5)
+despedirse("SALEM")
