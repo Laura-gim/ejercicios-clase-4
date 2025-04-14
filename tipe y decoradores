@@ -15,3 +15,17 @@ gat = Gato()
 hacer_hablar(ani)
 hacer_hablar(per)
 hacer_hablar(gat)
+ #ejercicio 2
+def decorador_mensaje(func):
+    def wrapper():
+        print("Hola")
+        func() 
+        print("Chau")
+    return wrapper 
+
+
+@decorador_mensaje 
+def mensaje(): 
+    print("Esto es programación avazada")
+    
+mensaje()
